@@ -11,6 +11,7 @@ TCP = socket.SOCK_STREAM
 client = socket.socket(Ipv4, TCP)
 client.connect((Ip, Port))
 
+#here are the sender and reciver function
 def receiver():
     while True:
         try:
@@ -26,8 +27,8 @@ def receiver():
 def write():
     while True:
         try:
-            message = input()  # Fixed input function
-            client.send(message.encode('utf-8'))  # Encode message before sending
+            message = input()  
+            client.send(message.encode('utf-8'))  
         except:
             print("Error, could not send message")
             client.close()
